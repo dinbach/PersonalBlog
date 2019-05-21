@@ -1,0 +1,6 @@
+baseURL = "http://example.org/"
+languageCode = "en-us"
+title = "Dinos Bachas Personal Blog"
+theme = "story"
+[params]
+  classes = ["feature-math"]
