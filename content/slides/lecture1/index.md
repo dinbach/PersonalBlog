@@ -1,9 +1,10 @@
 ---
-title: Creating Beautiful Presentations with Story
-date: 2019-05-20T12:17:27+02:00
+title: Hands-on Machine Learning - Lecture 1
+date: 2019-05-24T00:00:00+02:00
 url: "/slides/lecture1/"
 ratio: "16:9"
 draft: false
+buildFuture : true
 themes:
 - apron
 - descartes
@@ -32,18 +33,18 @@ class: title, no-footer
 
 # About the course
 
-The aim of this course is to give an introduction to tools for applying Machine Learning on simple problems.
+The aim of this course is to give an introduction to tools for using Machine Learning on simple problems.
+
+All meterial will eventually appear on [My Page](https://dinosbachasblog.netlify.com/talks)
+
+Don't hesite to contact me on any questions/suggestions/corrections you might have
+- Contact details [dinos.bachas@cern.ch](mailto:dinos.bachas@cern.ch)
 
 Today we will have a 3h session
-- Need to define the date/time for next 2 courses
-
-Stay tuned as all meterial will eventually appear on [My Page](https://dinosbachas.netlify.com/#lectures)
-
-Don't hesite to contact me on any question/suggestion/correction you might have
-- Contact details [here](https://dinosbachas.netlify.com/#contact)
+- Need to define the date/time for next courses
 
 ---
-
+class: roomy
 # Pre-requisites 
 
 The following check-list is recommended to have before you start:
@@ -57,13 +58,14 @@ The following check-list is recommended to have before you start:
 
 # Topics
 
-- The Ana(mini)conda package managers and setting up an environment for doing development.
+- The **Ana(mini)conda** package managers
+	- Setting up an environment for development
 
 --
-- **Jupyter** notebooks and Version Control
+- **Jupyter** notebooks and **Git**
 
 --
-- Introduction to basic features examples with Python, Numpy and Pandas
+- Basics of **Python**, Numpy and Pandas
 
 --
 - Preparing the inputs for ML libraries. Data formats, I/O, feature scaling.
@@ -92,15 +94,18 @@ class: compact
 
 # Why we need a package and environment manager?
 
-Huge number of packages to install for using the full power of ML
+Huge number of packages and ML related libraries to install
 
 Need for:
-- A package manager that will download from the proper repository the tools you need
-- A environment setup manager that will load all libraries needed allow for ML code development
-- A manager to compile everything taking care of library dependencies
-- Build a kind of **virtual machine**, where you can install whatever packages you need keeping your machine's default setup and configuration intact. 
+- A package manager that will **download** from the proper repository the tools you need
+- A environment setup manager that will **load all libraries** needed for ML code development
+- A manager to **install** everything taking care of dependencies
+- Build a kind of **virtual machine**, where you can install whatever packages you need keeping your machine's default setup and configuration intact
 
-**Conda** is a packaging tool and installer handles library dependencies outside of the Python packages as well as the Python packages themselves. Conda also creates a virtual environment, like virtualenv does.
+--
+
+**Conda** is both a packaging tool/installer and virtual environment manager
+- Handles library dependencies outside of the Python packages as well as the Python packages themselves
 
 ---
 
@@ -113,14 +118,12 @@ Both Anaconda and Miniconda uses Conda as the package manager.
 Miniconda only comes with the package management system not with a bundle of pre-installed packages like Anaconda. Once Conda is installed, you can then install whatever package you need from scratch along with any desired version of Python.
 Anaconda comes with a desktop app (optional).
 
-
 They allow to:
 - Collect data from files, databases, and data lakes
 - Manage environments with Conda (all package dependencies are taken care of at the time of download)
 - Share, collaborate on, and reproduce projects
 
-[https://www.anaconda.com/](https://www.anaconda.com/)
-
+[https://www.anaconda.com/](https://www.anaconda.com/)<br>
 [https://conda.io/docs/](https://conda.io/docs/)
 
 ---
@@ -274,16 +277,16 @@ Git is an Open Source Distributed Version Control System
 
 What is version control?
 - Users keep entire code and history on their location machines
-	- Can make changes without internet access but...
-	- Cannot push or pull changes from remote server
+	- Can make changes without internet access 
+	- Upload and download changes from remote server
 
 ---
 
+class: roomy
 # Git: what it is?
 
 Git is based on commits (i.e snapshots of your code):
-- Records what all your files look like at a given point in time
-- You decide when to take a snapshot, and of what files
+- Records what all(or some) your files look like at a given point in time
 - Have the ability to go back to visit any snapshot
 - A commit stores information about how the files changed since last time
 - Keeps a reference to the commit that came before it
@@ -297,7 +300,9 @@ class: img-right, compact
 
 # Repositories
 - Is a collection of all the files and the history of those files &rarr; your commits
-- Can live on a local machine or on a remote server ([GitHub](https://github.com/), [GitLab](https://about.gitlab.com/), [Bitbucket](https://bitbucket.org), etc)
+- **Can live on a local machine or on a remote server** ([GitHub](https://github.com/), [GitLab](https://about.gitlab.com/), [Bitbucket](https://bitbucket.org), etc)
+
+--
 
 Basic actions
 - **Clone**: Copying a repository from a remote server 
@@ -322,12 +327,14 @@ Branches are used to develop features isolated from each other. They can be used
 
 
 ---
-
+class: roomy
 # The Remote Git Repository
 
 By default work happens in the local repository. However if you want to collaborate on a project or bookkeep your work you will push the code into a remote repository. 
 
 Once the code is in the remote repository, other developers can see and modify that code.
+
+--
 
 Go to https://github.com/ and create an account. Accounts are free for public repositories, but now also for private repositories.
 
@@ -335,11 +342,14 @@ Go to https://github.com/ and create an account. Accounts are free for public re
 class: compact
 #Create a local git repository and add files
 
-`mkdir myproject`<br>
-`cd myproject`
+```sh
+mkdir myproject; cd myproject
+```
 
 To initialize a git repository in the root of the folder, run the git init command:<br>
-`git init`
+```sh
+git init
+```
 
 Go ahead and add a new file to the project, using any text editor you like or running a touch command.
 ```Bash
@@ -357,6 +367,9 @@ To add a file to a commit, you first need to add it to the **staging** environme
 ```Bash
 git add <filename> 
 ```
+
+--
+
 And then commit adding a message about it with `-m`
 ```Bash
 git commit -m "Adding README.md and info.txt"
@@ -460,14 +473,16 @@ class: roomy
 
 # The Jupyter Notebook
 
+We will be using Jupyter Notebooks a lot throughout this course.
+
 You can start a Jupyter Notebook session under the Conda environment we created before.
+
+Lets start now!
+
 ```Bash
 jupyter notebook
 ```
 
-We will be using Jupyter Notebooks a lot throughout this course...!
-
----
 
 
 
