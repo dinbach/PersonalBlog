@@ -1,11 +1,11 @@
 ---
 title: Lecture2
 date: "2019-06-07T08:00:17+02:00"
-url: "/slides/lecture2/"
+url: "/slides/lecture3/"
 image: "/slides/lecture2/cover.jpg"
 description: ""
 ratio: "16:9"
-buildFuture : true
+buildFuture : false
 themes:
 - apron
 - adirondack
