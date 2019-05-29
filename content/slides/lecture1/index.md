@@ -33,6 +33,8 @@ class: title, no-footer
 
 # About the course
 
+<!-- <p style="color:DodgerBlue;">Lorem ipsum...</p> -->
+
 The aim of this course is to give an introduction to tools for using Machine Learning on simple problems.
 
 All meterial will eventually appear on [My Page](https://dinosbachasblog.netlify.com/talks)
