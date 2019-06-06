@@ -9,8 +9,8 @@ event: "Aula M5"
 location: ""
 site: ""
 video: ""
-thumbnail: ""
-image: ""
+thumbnail: "/img/maria1.png"
+image: "/img/maria1.png"
 description: "This is the first lecture in the series of introductory lectures/hands-on Machine Learning tools. The objective is to setup the software environment that will allow for development of algorithms using ML related libraries"
 
 ---

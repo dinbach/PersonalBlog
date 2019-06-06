@@ -5,6 +5,9 @@ url: "/slides/lecture1/"
 ratio: "16:9"
 draft: false
 buildFuture : true
+image: "img/maria1.png"
+thumbnail: img/maria1.png
+
 themes:
 - apron
 - descartes
@@ -24,7 +27,8 @@ layout: true
 
 ---
 
-class: title, no-footer
+class: title, smokescreen, shelf, no-footer
+background-image: url(/img/maria1.png)
 
 # Hands-on Machine Learning
 ## Lecture 1

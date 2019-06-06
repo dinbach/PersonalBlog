@@ -5,7 +5,9 @@ url: "/slides/lecture2/"
 image: "/slides/lecture2/cover.jpg"
 description: ""
 ratio: "16:9"
-buildFuture : false
+buildFuture : true
+image: "img/maria2.png"
+thumbnail: img/maria2.png
 themes:
 - apron
 - adirondack
@@ -13,13 +15,32 @@ themes:
 classes:
 - feature-math
 - feature-justify
+- feature-nohighlight
 ---
 
-class: title, no-footer
-background-image: url(cover.jpg)
+class: title, smokescreen, shelf, no-footer
+background-image: url(/img/maria2.png)
 
 # Hands-on Machine Learning
 ## Lecture2
+---
+class: roomy
+
+# Today's Topics
+
+- Refresh setup for .color-limegreen[**Conda**] and .color-orangered[**Jupyter Notebooks**]
+
+--
+
+- Basics of .color-lightskyblue[**Python**] --> .color-deepskyblue[**Numpy**] --> .color-darkblue[**Pandas**]
+
+--
+
+- Introduction to types of Machine Learning.
+
+--
+
+You can open a Jupyter Notebook to try out what you see on the slides
 
 ---
 
@@ -31,49 +52,56 @@ class: title, no-footer, smokescreen
 
 class: compact
 # Data Types
-Integers (default for numbers)
-```python
+
+.color-royalblue[Integers] (default for numbers)
+```Python
 z = 5 / 2 # Answer is 2, integer division.
 ```
 
-Floats
+.color-royalblue[Floats]
 ```python
 x = 3.14
 ```
 
-Booleans
-```python
+.color-royalblue[Booleans]
+```Python
 a = True # or False
 ```
 
-Strings
+.color-royalblue[Strings]
 - Can use `""` or `''` . For example: `"cat"` and `'cat'` is the same thing
 
 ---
 
 class: roomy
-
 # Basic code features
 
-Assignment uses .color-orange[**`=`**] and comparison uses .color-orange[**`==`**]
+- Assignment uses .color-orange[**`=`**] and comparison uses .color-orange[**`==`**]
 
-- For numbers .color-orange[`+ - * / %`] are as expected.
-    - Special use of `+` for string concatenation.
-- Logical operators are words (`and`, `or`, `not`) 
+--
+- For .color-royalblue[numbers] .color-orange[`+ - * / %`] act are as expected
+  - Special use of .color-orange[`+`] for string concatenation
+
+--
+- .color-royalblue[Logical operators] are words (.color-orange[`and`, `or`, `not`])
+
+--
 - The first assignment to a variable creates it.
+
+--
 - Variable types don’t need to be declared.
 	- Python figures out the variable types on its own.
-- .color-orange[`#`] inserts a comment
+
+--
+- .color-orange[`#`] inserts a .color-royalblue[comment]
+
 
 ---
 class: compact
 # Beware of the whitespace!
 Whitespace and indentation (placement of newlines) is crucial in python
-- The first line with less indentation is outside of the block
-- The first line with more indentation starts a nested block
-- Often a colon appears at the start of a new block (e.g for function and class definitions)
 
-```
+```Python
 if z == 3.45 or y == 'Hello':
     x = x + 1         #Inside the if statement
     print(x)
@@ -83,17 +111,25 @@ if z == 3.45 or y == 'Hello':
 k = y+' outside' # Outside if
 print(k)
 ```
+- The first line with .color-mediumseagreen[more indentation starts a nested block]
+
+--
+- The first line with .color-mediumorchid[less indentation is outside of the block]
+
+--
+- Often a colon appears at the start of a new block (e.g for function and class definitions)
+
 
 ---
-# Type casting
+# Variable type and type-casting
 
-You can check the type of an expression by the `type` command:
+You can check the type of an expression by the .color-royalblue[**`type`**] command:
 ```python
 type(2)
 type(True)
 ```
 You can change the type of an expression in Python; this is called **type-casting** 
-- E.g: You can convert an `int` to a `float` or a `string` to an `int`
+- E.g: You can convert an .color-royalblue[`int`] --> .color-orangered[`float`] or a .color-mediumseagreen[`string`] --> .color-royalblue[`int`]
 
 ```Python
 float(2) : 2.0
@@ -107,7 +143,7 @@ int("1") : 1
 Common mathematical operations are supported
 - Addition, subtraction, multiplication division
 
-```python
+```Python
 123 + 22 + 64 + 35  :   244
 10 - 5              :   5
 10 * 5              :   50
@@ -120,7 +156,7 @@ Common mathematical operations are supported
 
 # Operations on strings
 
-```python
+```Python
 # Select elements of a string in steps
 a_name = 'Leonardo Da Vinci'
 a_name[::2]
@@ -141,7 +177,7 @@ upper(), replace(<input>,<replacement>), find(<string>), lower(), strip()
 
 # Operations on strings
 
-Split function
+.color-royalblue[**Split()**] function
 
 ```Python
 name_toSplit = 'Leonardo Da Vinci'
@@ -149,10 +185,17 @@ name_toSplit.split() # splits by space and produces a list
 name_toSplit.split('a') # splits by 'a' and produces a list
 ```
 
+--
+Check if a sub-string exist in a string
+```Python
+myName = 'Python'
+'Py' in myName
+```
+
 ---
 
 # Tuples
-**Tuples** are an ordered sequence of comma separated elements within `()`
+.color-royalblue[**Tuples**] are an ordered sequence of comma separated elements within .color-mediumseagreen[`()`]
 ```python
 a = ('python', 5.3, 10)
 
@@ -165,7 +208,7 @@ b=('conda', 88, 55)
 a + b   :   ('python', 5.3, 10, 'conda', 88, 55)
 ```
 
-Tuples are **immutable**, which means we can't change them.<br> i.e b[0] = 1 does not work!
+Tuples are .color-orangered[**immutable**], which means we can't change them.<br> i.e b[0] = 1 does not work!
 
 ---
 
@@ -189,12 +232,12 @@ print(c[2][1][0])
 # Lists
 
 Same as **tuples** except:
-- comma separated elements within `[]`. 
-- They are **mutable** which means you change them, i.e b[0] = 1 is allowed!
+- comma separated elements within .color-mediumseagreen[`[]`]
+- They are .color-orangered[**mutable**] which means you change them, i.e b[0] = 1 is allowed!
 
 --
 
-When we set one variable, `b` equal to `a`, both `a` and `b` are referencing the same list.
+.color-orangered[Notice:] When we set one variable, `b` equal to `a`, both `a` and `b` are referencing the same list.
 ```python
 a = [1, 2, 3] # a now references the list [1, 2, 3]
 b = a # b now references what a references
@@ -220,7 +263,7 @@ print (c)
 class: compact
 # Sets
 
-Sets are collections like lists and tuples but they are unordered:
+.color-royalblue[**Sets**] are collections like lists and tuples but they are unordered:
 - They do not record element position only have unique elements.
 - They have only one of a particular element
 
@@ -231,7 +274,7 @@ print (a)
 {'one', 'two', 'three'}
 ```
 
-Convert a list to a set using the `set()` function
+Convert a list to a set using the .color-royalblue[**`set()`**] function
 ```python
 
 L= [1, 2, 3, 4, 5, 5, 5]
@@ -265,13 +308,14 @@ set_1.issubset(set_3) # Should return True
 # Dictionaries
 
 Dictionaries store a mapping between a set of keys and a set of values.
-- Keys should be unique and immutable
+- Keys should be unique and .color-orangered[**immutable**]
 - Values can be any type or duplicates
 
 You can define, modify, view, lookup, and delete the key-value pairs in the dictionary.
 ```
 d = {'user':'dina', 'pwd':1234}
 ```
+
 | key | value |
 | --- | --- |
 | `user` | `'dina'` |
@@ -303,7 +347,7 @@ d.clear()
 
 # Conditional statements
 
-The `if` and `else` syntax is like this:
+The .color-royalblue[`if`] and .color-royalblue[`else`] syntax is like this:
 ```
 temperature=21
 if temperature>17 and temperature<25:
@@ -439,7 +483,7 @@ w = 2*z
 q = z * w 
 ```
 dot product is done as<br>
-`q = np.dot(z,w)` i.e $$z^{T}w$$
+`q = np.dot(z,w)` i.e \\(z^{T}w\\)
 
 
 ---
@@ -456,7 +500,7 @@ np.sin(a)<br>
 --
 
 >\# very useful when defining bins in plots<br>
-x = np.linspace(0.2 * np.pi,100) <br>
+x = np.linspace(0, 2 * np.pi, 100) <br>
 
 --
 
@@ -585,7 +629,10 @@ my_series.loc['jet2']
 ```
 my_series.iloc[1]
 ```
-.center[.color-darkcyan[More examples in the Jupyter Notebook]]
+
+.center[.color-darkcyan[More examples in the Jupyter Notebook on GitHub repository:]]
+.center[`git clone https://github.com/dinbach/ML_Lectures_Lecce2019.git`]
+
 
 ---
 class: compact
@@ -625,40 +672,24 @@ class: col-2,roomy
 
 # Where is ML used?
 
-- Natural Language Processing
 
---
 - Speech and handwriting recognition
-
---
 - Object recognition and computer vision
+- Data Science
 
 --
 - Fraud detection
-
---
-- Financial market analysis
-
---
+- Spam and virus detection
 - Search engines
 
 --
-- Spam and virus detection
-
---
-- Medical diagnosis
-
---
-- Robotics control
-
---
-- Automation: energy usage, systems control, video games, self-driving cars
-
---
+- Financial market analysis
 - Advertising
 
 --
-- Data Science
+- Medical diagnosis
+- Robotics control
+- Automation: energy usage, systems control, video games, self-driving cars
 
 --
 - Physics 
@@ -667,39 +698,35 @@ class: col-2,roomy
 
 # Categories of ML
 
-- Classification
+- .color-dodgerblue[Classification]
 	- Goal: Predict results in discrete categories
 
 --
-- Regression
+- .color-forestgreen[Regression]
 	- Goal: Predict a numeric value. Predict results within a continuous output, meaning that we are trying to map input variables to some continuous function
 
 --
-- Cluster Analysis
+- .color-orangered[Cluster Analysis]
 	- Goal: Organize similar items into groups
 
 --
-- Dimensionality reduction
+- .color-goldenrod[Dimensionality reduction]
 	- Goal: Reducing the number of variables under consideration, by obtaining a set of principal variables
 
 
 ---
 
 # Learning techniques
-**Learning**: estimate statistical model from data
+.color-dodgerblue[**Learning**: estimate statistical model from data]
 
-- **Supervised**
---
-
+- .color-forestgreen[**Supervised**]
 	- The target (what model is predicting) is provided, i.e we know the relationship between the input and the output
 	- The data is "Labeled"
 		- Regression
 		- Classification
 --
 
-- **Unsupervised**
---
-
+- .color-orangered[**Unsupervised**]
 	- The target is unknown or unavailable
 	- The data is "Unlabeled"
 		- Cluster analysis 
@@ -834,161 +861,3 @@ Model parameters are adjusted during model training to change input-output mappi
 - Adjust parameters to reduce loss function
 - Repeat until parameters stabilize
 - Estimate final performance on test-set
-
----
-class: compact,col-2
-# Colors 1
-.color-aliceblue[aliceblue]
-.color-antiquewhite[antiquewhite]
-.color-aqua[aqua]
-.color-aquamarine[aquamarine]
-.color-azure[azure]
-.color-beige[beige]
-.color-bisque[bisque]
-.color-black[black]
-.color-blanchedalmond[blanchedalmond]
-.color-blue[blue]
-.color-blueviolet[blueviolet]
-.color-brown[brown]
-.color-burlywood[burlywood]
-.color-cadetblue[cadetblue]
-.color-chartreuse[chartreuse]
-.color-chocolate[chocolate]
-.color-coral[coral]
-.color-cornflowerblue[cornflowerblue]
-.color-cornsilk[cornsilk]
-.color-crimson[crimson]
-.color-cyan[cyan]
-.color-darkblue[darkblue]
-.color-darkcyan[darkcyan]
-.color-darkgoldenrod[darkgoldenrod]
-.color-darkgray[darkgray]
-.color-darkgreen[darkgreen]
-.color-darkgrey[darkgrey]
-.color-darkkhaki[darkkhaki]
-.color-darkmagenta[darkmagenta]
-.color-darkolivegreen[darkolivegreen]
-.color-darkorange[darkorange]
-.color-darkorchid[darkorchid]
-.color-darkred[darkred]
-.color-darksalmon[darksalmon]
-.color-darkseagreen[darkseagreen]
-.color-darkslateblue[darkslateblue]
-.color-darkslategray[darkslategray]
-.color-darkslategrey[darkslategrey]
-.color-darkturquoise[darkturquoise]
-.color-darkviolet[darkviolet]
-.color-deeppink[deeppink]
-.color-deepskyblue[deepskyblue]
-.color-dimgray[dimgray]
-.color-dimgrey[dimgrey]
-.color-dodgerblue[dodgerblue]
-.color-firebrick[firebrick]
-.color-floralwhite[floralwhite]
-.color-forestgreen[forestgreen]
-.color-fuchsia[fuchsia]
-.color-gainsboro[gainsboro]
-.color-ghostwhite[ghostwhite]
-.color-gold[gold]
-.color-goldenrod[goldenrod]
-.color-gray[gray]
-.color-green[green]
-.color-greenyellow[greenyellow]
-.color-grey[grey]
-.color-honeydew[honeydew]
-.color-hotpink[hotpink]
-.color-indianred[indianred]
-.color-indigo[indigo]
-.color-ivory[ivory]
-.color-khaki[khaki]
-.color-lavender[lavender]
-.color-lavenderblush[lavenderblush]
-.color-lawngreen[lawngreen]
-.color-lemonchiffon[lemonchiffon]
-.color-lightblue[lightblue]
-.color-lightcoral[lightcoral]
-.color-lightcyan[lightcyan]
-.color-lightgoldenrodyellow[lightgoldenrodyellow]
-.color-lightgray[lightgray]
-.color-lightgreen[lightgreen]
-.color-lightgrey[lightgrey]
-.color-lightpink[lightpink]
-.color-lightsalmon[lightsalmon]
-.color-lightseagreen[lightseagreen]
-.color-lightskyblue[lightskyblue]
-.color-lightslategray[lightslategray]
-.color-lightslategrey[lightslategrey]
-.color-lightsteelblue[lightsteelblue]
-.color-lightyellow[lightyellow]
-.color-lime[lime]
-.color-limegreen[limegreen]
-.color-linen[linen]
-.color-magenta[magenta]
-.color-maroon[maroon]
-.color-mediumaquamarine[mediumaquamarine]
-.color-mediumblue[mediumblue]
-.color-mediumorchid[mediumorchid]
-.color-mediumpurple[mediumpurple]
-.color-mediumseagreen[mediumseagreen]
-.color-mediumslateblue[mediumslateblue]
-.color-mediumspringgreen[mediumspringgreen]
-.color-mediumturquoise[mediumturquoise]
-.color-mediumvioletred[mediumvioletred]
-
----
-
-class: compact,col-2
-# Colors 2
-
-.color-midnightblue[midnightblue]
-.color-mintcream[mintcream]
-.color-mistyrose[mistyrose]
-.color-moccasin[moccasin]
-.color-navajowhite[navajowhite]
-.color-navy[navy]
-.color-oldlace[oldlace]
-.color-olive[olive]
-.color-olivedrab[olivedrab]
-.color-orange[orange]
-.color-orangered[orangered]
-.color-orchid[orchid]
-.color-palegoldenrod[palegoldenrod]
-.color-palegreen[palegreen]
-.color-paleturquoise[paleturquoise]
-.color-palevioletred[palevioletred]
-.color-papayawhip[papayawhip]
-.color-peachpuff[peachpuff]
-.color-peru[peru]
-.color-pink[pink]
-.color-plum[plum]
-.color-powderblue[powderblue]
-.color-purple[purple]
-.color-rebeccapurple[rebeccapurple]
-.color-red[red]
-.color-rosybrown[rosybrown]
-.color-royalblue[royalblue]
-.color-saddlebrown[saddlebrown]
-.color-salmon[salmon]
-.color-sandybrown[sandybrown]
-.color-seagreen[seagreen]
-.color-seashell[seashell]
-.color-sienna[sienna]
-.color-silver[silver]
-.color-skyblue[skyblue]
-.color-slateblue[slateblue]
-.color-slategray[slategray]
-.color-slategrey[slategrey]
-.color-snow[snow]
-.color-springgreen[springgreen]
-.color-steelblue[steelblue]
-.color-tan[tan]
-.color-teal[teal]
-.color-thistle[thistle]
-.color-tomato[tomato]
-.color-turquoise[turquoise]
-.color-violet[violet]
-.color-wheat[wheat]
-.color-white[white]
-.color-whitesmoke[whitesmoke]
-.color-yellow[yellow]
-.color-yellowgreen[yellowgreen]
