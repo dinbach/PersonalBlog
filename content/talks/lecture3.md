@@ -8,7 +8,8 @@ location: ""
 site: ""
 video: ""
 slides: "/slides/lecture3/"
-thumbnail: "/slides/lecture3/thumbnail.jpg"
-image: "/slides/lecture3/cover.jpg"
-description: ""
+thumbnail: "/img/maria3.png"
+image: "/img/maria3.png"
+description: "This is the thrid lecture in the series of introductory lectures/hands-on Machine Learning tools. The objective is to discuss about the types of ML problems, how to transform data to ML libraries aware format and build a Neural Network in Keras for simple classification problems."
 ---
+This is the thrid lecture in the series of introductory lectures/hands-on Machine Learning tools. The objective is to discuss about the types of ML problems, how to transform data to ML libraries aware format and build a Neural Network in Keras for simple classification problems.
