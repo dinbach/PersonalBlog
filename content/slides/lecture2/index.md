@@ -154,12 +154,15 @@ Common mathematical operations are supported
 
 ---
 
+class: compact
+
 # Operations on strings
 
 ```Python
-# Select elements of a string in steps
+# Select elements of a string 
 a_name = 'Leonardo Da Vinci'
-a_name[::2]
+a_name[1:5] # from e to a
+a_name[::2] # in steps
 
 # Length of string
 len(a_name)        :  17
