@@ -1,11 +1,11 @@
 ---
-title: Lecture3
+title: Hands-on Machine Learning - Lecture 3
 date: "2019-06-14T08:00:17+02:00"
 url: "/slides/lecture3/"
 image: "/slides/lecture3/cover.jpg"
 description: ""
 ratio: "16:9"
-buildFuture : false
+buildFuture : true
 image: "img/maria3.png"
 thumbnail: img/maria3.png
 themes:

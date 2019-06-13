@@ -1,5 +1,4 @@
 ---
-
 title: "Hands-on Machine Learning - Lecture 1"
 date: 2019-05-24T06:00:00+02:00
 draft: false

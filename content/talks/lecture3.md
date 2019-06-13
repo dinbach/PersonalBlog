@@ -10,6 +10,6 @@ video: ""
 slides: "/slides/lecture3/"
 thumbnail: "/img/maria3.png"
 image: "/img/maria3.png"
-description: "This is the thrid lecture in the series of introductory lectures/hands-on Machine Learning tools. The objective is to discuss about the types of ML problems, how to transform data to ML libraries aware format and build a Neural Network in Keras for simple classification problems."
+description: "This is the third lecture in the series of introductory lectures/hands-on for Machine Learning tools. The objective is to discuss about the types of ML approches, how to transform data to formats that are ML libraries aware and build a Neural Network in Keras for simple classification problems."
 ---
-This is the thrid lecture in the series of introductory lectures/hands-on Machine Learning tools. The objective is to discuss about the types of ML problems, how to transform data to ML libraries aware format and build a Neural Network in Keras for simple classification problems.
+This is the third lecture in the series of introductory lectures/hands-on for Machine Learning tools. The objective is to discuss about the types of ML approches, how to transform data to formats that are ML libraries aware and build a Neural Network in Keras for simple classification problems.

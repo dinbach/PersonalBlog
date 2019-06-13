@@ -1,7 +1,7 @@
 baseURL = "https://dinosbachasblog.netlify.com/"
 languageCode = "en-us"
 theme = "story"
-title = "Dinos Bachas Personal Blog"
+title = "Dinos Bachas Blog"
 buildFuture = true
 
 [params]
