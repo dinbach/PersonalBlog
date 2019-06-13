@@ -26,12 +26,6 @@ background-image: url(/img/maria3.png)
 
 ---
 
-class: title, smokescreen
-
-# Machine Learning
-
----
-
 # What is Machine Learning?
 
 Arthur Samuel (1959)
@@ -121,9 +115,10 @@ class: img-right, compact
 ![](Samples-Features.png# center ft )
 ![](Categories.png#  b-10pct r-10pct w-30pct absolute )
 
-.color-forestgreen[**Sample**]: A.k.a Row, event, record, instance
+.color-forestgreen[**Sample**]: Row, event, record, instance...all mean the same thing!
 
-.color-orangered[**Variable**]: A.k.a Columns, Features, dimension, attribute. Variables' data types: Numeric, categorical, strings, ...
+.color-orangered[**Variable**]: Columns, Features, dimension, attribute...all mean the same thing!
+  - Variables' data types: Numeric, categorical, strings, ...
 
 \\(x_i\\) : .color-deepskyblue[**input**] variables<br>
 \\(y_i\\) : .color-navy[**output**] or target variable<br>
@@ -140,7 +135,8 @@ class: img-right
 
 Our goal is, given a training set, to learn a function .color-darkorchid[**`h`**] :  \\(X \rightarrow Y\\) so that .color-darkorchid[**`h(x)`**] is a good predictor for the corresponding value of .color-limegreen[`y`]. 
 
-.color-darkorchid[**`h(x)`**]  is called hypothesis(model).
+.color-darkorchid[**`h(x)`**]  is called hypothesis (model)
+
 --
 
 When .color-limegreen[`y`] is continuous, the learning problem is a .color-orange[regression] problem.
@@ -155,7 +151,7 @@ class: img-right
 
 Our goal is, given a training set, to learn a function .color-darkorchid[**`h`**] :  \\(X \rightarrow Y\\) so that .color-darkorchid[**`h(x)`**] is a good predictor for the corresponding value of .color-limegreen[`y`]. 
 
-.color-darkorchid[**`h(x)`**]  is called hypothesis(model).
+.color-darkorchid[**`h(x)`**]  is called hypothesis (model)
 
 When .color-limegreen[`y`] can take on 2 discrete values the learning problem is a .color-orange[binary classification] problem.
 
@@ -169,7 +165,7 @@ class: img-right
 
 Our goal is, given a training set, to learn a function .color-darkorchid[**`h`**] :  \\(X \rightarrow Y\\) so that .color-darkorchid[**`h(x)`**] is a good predictor for the corresponding value of .color-limegreen[`y`]. 
 
-.color-darkorchid[**`h(x)`**]  is called hypothesis(model).
+.color-darkorchid[**`h(x)`**]  is called hypothesis (model)
 
 When .color-limegreen[`y`] can take on more than 2 discrete values the learning problem is a .color-orange[multi-class classification] problem.
 
@@ -216,6 +212,46 @@ A learning algorithm might want to put a straight line through the data
 A better algorithm might fit a .color-forestgreen[quadratic function], or a .color-forestgreen[second-order polynomial] to this data
 
 ---
+
+# Linear regression
+
+![](bokeh_plot.png# fr h-6)
+
+Say you have the training set of Movies Scores on IMDB and the millions of views on Netflix
+
+Hypothesis: \\(h(x) = \theta_0 + \theta_1 x \\)<br>
+\\( \theta_i \\): parameters
+
+.color-red[Question]: how can we best select the \\( \theta_0, \theta_1 \\) ?
+
+--> Typical minimization problem
+
+---
+
+class: img-right, compact
+
+# Cost function
+
+![](gradient-descent-2vars.png )
+
+.color-darkgreen[**Answer**]: Choose parameters \\( \theta_0, \theta_1 \\) so that our prediction .color-darkorchid[**`h(x)`**] is as close as possible to the truth values .color-limegreen[`y`]. 
+We measure the accuracy of our hypothesis using a cost function.
+
+Define cost function:  
+\\[ 
+J(\theta) = \frac{1}{2m} \sum_{i=0}^{m} (h(x_i) - y_i)^2 
+\\]
+Cost function for linear regression is convex
+
+Goal: minimize \\( J(\theta_0,\theta_1) \\)
+---
+
+class: compact
+# Cost Functions
+
+![](LossFunctions.png# center h-6)
+
+---
 class: compact
 # Supervised Learning - Building an ML model
 
@@ -240,40 +276,6 @@ Model parameters are adjusted during model training to change input-output mappi
 - Repeat until parameters stabilize
 - Estimate final performance on test-set
 
-
----
-
-# Linear regression
-
-![](bokeh_plot.png# fr h-6)
-
-Say you have the training set of Movies Scores on IMDB and the millions of views on Netflix
-
-Hypothesis: \\(h(x) = \theta_0 + \theta_1 x \\)<br>
-\\( \theta_i \\): parameters
-
-.color-red[Question]: how can we best select the \\( \theta_0, \theta_1 \\) ?
-
---> Typical minimization problem
-
----
-
-class: img-right, compact
-
-# Cost function
-
-![](gradient-descent-2vars.png )
-
-.color-darkgreen[Answer]: Choose parameters \\( \theta_0, \theta_1 \\) so that our prediction \\(h(x)\\) is as close as possible to the truth values `y`. 
-We measure the accuracy of our hypothesis using a cost function.
-
-Define cost function:  
-\\[ 
-J(\theta) = \frac{1}{2m} \sum_{i=0}^{m} (h(x_i) - y_i)^2 
-\\]
-Cost function for linear regression is convex
-
-Goal: minimize \\( J(\theta_0,\theta_1) \\)
 
 
 ---
@@ -330,12 +332,6 @@ g(z) maps any real number to (0, 1),
   - \\( h_\theta(x) = P(y=1 | x;\theta) = 1 - P(y=0 | x;\theta) \\)
   - \\( P(y=0|x;θ)+P(y=1|x;θ)=1 \\)
 
----
-
-class: compact
-# Cost Functions
-
-![](LossFunctions.png# center h-6)
 
 ---
 class: compact
@@ -374,14 +370,15 @@ Gradient descent is computationally costly (since we compute gradient over full 
 
 
 ---
+class: compact
 
-# Neural networks
-![](NN_full.png# center h-20pct)
+# (Deep) Neural networks
+![](NN_full1.png# center h-20pct)
 
-- The neuron is a computational unit that takes as input \\(x_{1,n}\\)
-- Outputs \\( h_{W,b}(x) = f ( \sum_i W_i x_i +b) \\)  where **f** is called the activation function. 
+- The fundamental building block of Deep Learning is the Perceptron which is a single neuron in a Neural Network.
+- Given a finite set of m inputs, each input is multiplied by a weight \\( \theta_1\\) to \\( \theta_m\\) then we sum up the weighted combination of inputs, 
+- Finally pass them through a non-linear activation function --> produces the output Y
 - A neural network consists of putting together many neurons in such a way that output of a neuron can be the input of another.
-- A NN is a series of mathematical operations of linear and non-linear transformations of inputs looking for the optimal weights
 
 ---
 
@@ -446,20 +443,17 @@ Split dataset into multiple parts
 
 ---
 
-class: compact
-# What is Keras
+# What is Keras ?
 
 ![](keras-logo.png# fl w-6 h-5)
 
 https://keras.io/
 
-Python library to train and apply neural networks.
+Python library to build and train neural networks.
 
-Python wrapper around multiple numerical computation libaries, e.g., TensorFlow, Theano
+Python wrapper around multiple numerical computation libaries, e.g., TensorFlow, Theano,...
 
-Really abstract and modular. Hides most of the low-level configuration sacrificing little functionality for much easier user interface
-
-Backends: TensorFlow, Theano, CNTK
+Very abstract and modular. Hides most of the low-level configuration sacrificing little functionality for much easier user interface
 
 Officially supported from Google
 
@@ -496,7 +490,7 @@ class: compact
 
 # Building NNs in Keras: Compiling the model
 
-"Compile" the model (i.e means to configure it actually)
+"Compile" the model (i.e means to configure it actually and use the backend for the numerical computations)
 ```Python
 model.compile(loss='categorical_crossentropy', optimizer='sgd',
               metrics=['accuracy'])
@@ -524,7 +518,12 @@ model.fit(x_train, y_train, epochs=5, batch_size=32)
   - When using validation data evaluation will be run at the end of every epoch
 
 
+---
 
+class: title, smokescreen
+
+# Lets go to the hands-on!
+#### git clone https://github.com/dinbach/ML_Lectures_Lecce2019.git
 
 
 
