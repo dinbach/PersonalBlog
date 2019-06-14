@@ -1,6 +1,6 @@
 ---
 title: Hands-on Machine Learning - Lecture 3
-date: "2019-06-14T08:00:17+02:00"
+date: "2019-06-14T02:00:17+02:00"
 url: "/slides/lecture3/"
 image: "/slides/lecture3/cover.jpg"
 description: ""
@@ -285,9 +285,9 @@ class: img-right,compact
 
 ![](LinRergess1.png# fr)
 
-Training set for a classification task of Signal or Background process wrt to the momentum of a particle. 
+Training set for a classification task of Signal or Background process wrt to the jet radius
 
-Only two possible values, zero or one.
+Only two possible values, 0 or 1
 
 Linear regression tries to fit the straight line to the data 
 
