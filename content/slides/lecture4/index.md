@@ -1,34 +1,27 @@
 ---
-title: Lecture4
-date: "2019-06-21T08:10:22+02:00"
+title: Hands-on Machine Learning - Lecture 4
+date: "2019-07-03T02:00:17+02:00"
 url: "/slides/lecture4/"
 image: "/slides/lecture4/cover.jpg"
 description: ""
 ratio: "16:9"
 buildFuture : true
+image: "img/maria4.png"
+thumbnail: img/maria4.png
 themes:
 - apron
 - adirondack
 - descartes
----
-class: title
-background-image: url(cover.jpg)
-
-# Lecture4
-## Subtitle
+classes:
+- feature-math
+- feature-justify
+- feature-nohighlight
 
 ---
-# About Me
+class: title, smokescreen, shelf, no-footer
+background-image: url(/img/maria4.png)
 
-- Slides are at https://dinosbachasblog.netlify.com/talks/
-- Ask questions anytime
+# Hands-on Machine Learning
+## Lecture 4
 
 ---
-# Slides and Contact Information
-
-.qrcode.db.fr.w-40pct.ml-4[]
-
-Slides are at https://dinosbachasblog.netlify.com/talks/ or you can scan the QR code.
-
-Contact:
-
