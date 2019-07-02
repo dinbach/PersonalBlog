@@ -331,6 +331,13 @@ Most common parameters that can be optimized:
 
 class: title
 
+# Let go to the exercises
+
+##`git clone https://github.com/dinbach/ML_Lectures_Lecce2019.git`
+
+---
+class: title
+
 # Convolutional Neural Networks
 
 ---
