@@ -134,7 +134,7 @@ Example:
 \theta_0 + \theta_1x + \theta_2x^2 + \theta_3x^3 + \theta_4x^4 
 \\]
 
-We can penalize the last 2 terms by chaning the form of the cost function to:
+We can penalize \\(\theta\\) terms by changing the form of the cost function to:
 \\[ min^\theta \sum_{i=1}^m \left ( h(x^i,\theta) - y^i  \right )^2 + \lambda \sum_j^n \theta^2_j \\]
 
 where \\( \lambda \\) is the regularization parameter (determines how much the costs of theta parameters are inflated)
@@ -304,15 +304,13 @@ plt.plot(history.history['cosine_proximity'])
 
 On classification problems one can use
 
-- Binary Accuracy: 
-  - binary_accuracy, acc
-- Categorical Accuracy: 
-  - categorical_accuracy, acc
-- Sparse Categorical Accuracy: 
-  - sparse_categorical_accuracy
-- Top k Categorical Accuracy: 
-  - top_k_categorical_accuracy (requires you specify a k parameter)
-- Sparse Top k Categorical Accuracy: sparse_top_k_categorical_accuracy (requires you specify a k parameter)
+- .color-orchid[Binary Accuracy]
+  - Implies that the threshold is 0.5, everything above 0.5 will be considered as correct
+- .color-dodgerblue[Categorical Accuracy]
+  - For multiclassification problems. K.argmax(y_true) takes the highest value to be the prediction and matches against the comparative set.
+- .color-orange[Top k Categorical Accuracy] (requires you specify a k parameter)
+  - Top-k is measured on the accuracy of the correct prediction being in the top-k predictions. 
+- ...
 
 
 ---
@@ -351,7 +349,7 @@ Keras makes it pretty simple to build a CNN.
 A convolution multiplies a matrix of pixels with a filter matrix or "kernel" and sums up the multiplication values. Then the convolution slides over to the next pixel and repeats the same process until all the image pixels have been covered.
 
 
-The convolutional output for each node, over all the channels, are passed through an activation function.
+The convolutional output for each node, over all the channels, are then passed through an activation function.
 
 ![](CNNFull.png# h-20pct absolute l-33pct)
 
