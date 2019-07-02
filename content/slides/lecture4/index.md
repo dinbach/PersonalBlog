@@ -1,6 +1,6 @@
 ---
 title: Hands-on Machine Learning - Lecture 4
-date: "2019-07-03T02:00:17+02:00"
+date: "2019-07-03T00:00:17+02:00"
 url: "/slides/lecture4/"
 image: "/slides/lecture4/cover.jpg"
 description: ""
