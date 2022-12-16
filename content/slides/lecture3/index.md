@@ -72,8 +72,7 @@ class: col-2,roomy
 --
 
 - .color-forestgreen[Παλινδρόμηση]
-	- Στόχος: Πρόβλεψη μιας αριθμητικής τιμής σε μια συνεχή έξοδο, που σημαίνει ότι προσπαθούμε να αντιστοιχίσουμε μεταβλητές εισόδου σε κάποια συνεχή συνάρτηση
-	- \\( y = \text{Πραγματικοί Αριθμοί} \\)
+	- Στόχος: Πρόβλεψη μιας αριθμητικής τιμής σε μια συνεχή έξοδο, που σημαίνει ότι προσπαθούμε να αντιστοιχίσουμε μεταβλητές εισόδου σε κάποια συνεχή συνάρτηση \\( y = \text{Πραγματικοί Αριθμοί} \\)
 
 ---
 class: roomy
@@ -170,23 +169,12 @@ class: img-right
 
 Όταν το .color-limegreen[`y`] μπορεί να λάβει περισσότερες από 2 διακριτές τιμές, το μαθησιακό πρόβλημα είναι ένα πρόβλημα  .color-orange[ταξινόμησης πολλών τάξεων].
 
----
-
-class: img-right
-
-# Supervised Learning - Example of a model
-
-![](Scatter-withX.png# center )
-
-Lets say you have data of a movie ranking in IMDB and the views of this movie per month on Netflix 
-
-Say you work for Netflix and want to predict the views of a movie if shown with ranking 7.8
 
 ---
 
 class: img-right
 
-# Εποπτευόμενη Μάθηση - Παράδειγμα μοντέλου
+# Εποπτευόμενη Μάθηση - Παράδειγμα
 
 ![](Scatter-withXandLine.png# center )
 
@@ -200,15 +188,13 @@ class: img-right
 
 class: img-right
 
-# Εποπτευόμενη Μάθηση - Παράδειγμα μοντέλου
+# Εποπτευόμενη Μάθηση - Παράδειγμα
 
 ![](Scatter-withXandCurve.png# center )
 
 Ας υποθέσουμε ότι έχετε δεδομένα για την κατάταξη μιας ταινίας στο IMDB και τις προβολές αυτής της ταινίας ανά μήνα στο Netflix
 
 Ας υποθέσουμε ότι εργάζεστε για το Netflix και θέλετε να προβλέψετε τις προβολές μιας ταινίας εάν έχει κατάταξη 7,8
-
-Ένας αλγόριθμος εκμάθησης μπορεί να θέλει να βάλει .color-forestgreen[ευθεία γραμμή] στα δεδομένα
 
 Ένας καλύτερος αλγόριθμος μπορεί να ταιριάζει σε αυτά τα δεδομένα μια .color-forestgreen[τετραγωνική συνάρτηση] ή ένα .color-forestgreen[πολυώνυμο δεύτερης-τρίτης τάξης]
 
@@ -218,7 +204,7 @@ class: img-right
 
 ![](bokeh_plot.png# fr h-6)
 
-Ας υποθέσουμε ότι έχετε το training σετ των αποτελεσμάτων ταινιών στο IMDB και τις εκατομμύρια προβολές στο Netflix
+Έστω ότι έχετε το training σετ με τις βαθμολογίες ταινιών στο IMDB και τα εκατομμύρια προβολές στο Netflix
 
 Hypothesis: \\(h(x) = \theta_0 + \theta_1 x \\)<br>
 \\( \theta_i \\): parameters
@@ -327,7 +313,7 @@ class: img-right, compact
 
 g(z) αντιστοιχίζει οποιονδήποτε πραγματικό αριθμό στο (0, 1),
 - Χρήσιμο για τη μετατροπή μιας συνάρτησης αυθαίρετης τιμής σε μια συνάρτηση που ταιριάζει καλύτερα στην ταξινόμηση.
-- \\( h_\theta(x) \\) δίνει πιθανότητα ότι η έξοδος είναι 1
+- \\( h_\theta(x) \\) : πιθανότητα η έξοδος να είναι 1
   - \\( h_\theta(x) = P(y=1 | x;\theta) = 1 - P(y=0 | x;\theta) \\)
   - \\( P(y=0|x;θ)+P(y=1|x;θ)=1 \\)
 
@@ -357,10 +343,10 @@ class: compact
 # (Deep) Neural networks
 ![](NN_full1.png# center h-20pct)
 
-- Το θεμελιώδες δομικό στοιχείο της Deep Learning είναι το Perceptron που είναι ένας μεμονωμένος νευρώνας σε ένα νευρωνικό δίκτυο.
-- Με δεδομένο ένα πεπερασμένο σύνολο m εισόδων, κάθε είσοδος \\( \theta_1\\) ως \\( \theta_m\\) πολλαπλασιάζεται με ένα βάρος και τότε αθροίζουμε τον σταθμισμένο συνδυασμό τους, 
-- έλος περάστε τα από μια μη γραμμική συνάρτηση ενεργοποίησης --> παράγει output Y
-- Ένα νευρωνικό δίκτυο αποτελείται από τη συνένωση πολλών νευρώνων με τέτοιο τρόπο ώστε το output ενός είναι input για έναν άλλο.
+- Το θεμελιώδες δομικό στοιχείο της Deep Learning είναι το Perceptron που είναι ένας μεμονωμένος νευρώνας σε ένα ΝΝ.
+- Σε ένα πεπερασμένο σύνολο m εισόδων, κάθε είσοδος \\( \theta_1\\) ως \\( \theta_m\\) πολλαπλασιάζεται με ένα βάρος και αθροίζουμε τον σταθμισμένο συνδυασμό τους, 
+- Τέλος περάστε τα από μια μη γραμμική συνάρτηση ενεργοποίησης --> παράγει output Y
+- Ένα ΝΝ αποτελείται από τη συνένωση πολλών νευρώνων με τέτοιο τρόπο ώστε το output ενός είναι input για έναν άλλο.
 
 ---
 
@@ -397,21 +383,20 @@ class: compact
 
 --
 
-.color-deepskyblue[Training set]: Used to fit model parameters
+.color-deepskyblue[Training set]: Χρησιμοποιείται για την προσαρμογή των παραμέτρων του μοντέλου
 
 --
 
-.color-darkorange[Validation set]: Used to check performance on independent data and tune hyper parameters
+.color-darkorange[Validation set]: Χρησιμοποιείται για τον έλεγχο της απόδοσης σε ανεξάρτητα δεδομένα και καθοριμό hyper parameters
 
 --
 
 .color-limegreen[Test set]:
-- final evaluation of performance after all hyper-parameters fixed
-- Needed since we tune, or “peek”, performance with validation set
+- τελική αξιολόγηση της απόδοσης μετά τον καθορισμό όλων των υπερπαραμέτρων
 
 ---
 
-# What is Keras ?
+# Keras ?
 
 ![](keras-logo.png# fl w-6 h-5)
 
